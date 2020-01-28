@@ -1,0 +1,51 @@
+{
+    "name": "kmuenkel/safe-schema-builder",
+    "description": "Replace Laravel's Schema Facade with one capable of omitting table alterations that already exist",
+    "time": "2020-01-28 02:30:00",
+    "authors": [
+        {
+            "name": "Kevin Muenkel",
+            "email": "kevin_tm@yahoo.com"
+        }
+    ],
+    "keywords": [
+        "testing",
+        "eloquent",
+        "doctrine",
+        "laravel"
+    ],
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/database": "~5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "xethron/migrations-generator": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SafeSchemaBuilder\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SafeSchemaBuilder\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Schema": "SafeSchemaBuilder\\Overrides\\Illuminate\\Support\\Facades\\Schema"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
